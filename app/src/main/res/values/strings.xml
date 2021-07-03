@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">techtile</string>
+    <string name="title_activity_details">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="email_textview">Email Address</string>
+    <string name="email_placeholder">mail@mail.com</string>
+    <string name="password_textview">Password</string>
+    <string name="password_placeholder">8 character password</string>
+    <string name="create_account_button">Create Account</string>
+    <string name="create_account_or">OR</string>
+    <string name="facebook_register_button">Continue with Facebook</string>
+    <string name="gmail_register_button">Continue with Gmail</string>
+    <string name="facebookToast">This Button nt implemented yet! For Facebook</string>
+    <string name="gmailToast">This Button not İmplemented Yet! For Gmail</string>
+    <string name="emptyToast">Email and Password have not be empty!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
