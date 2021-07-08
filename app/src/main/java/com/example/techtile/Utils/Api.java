@@ -1,15 +1,12 @@
 package com.example.techtile.Utils;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.techtile.Model.LoginModel;
 import com.example.techtile.Model.RegisterModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,7 +14,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Api {
-    //https://welive-app.com:443/api/v1/entrance/signup?id=b74a8e1c-2749-442f-b6ef-8e0abf3737f5
     private static final String TAG = "TAG";
 
     private final String BaseUrl = "https://welive-app.com:443/api/v1/entrance/";
@@ -35,22 +31,12 @@ public class Api {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
-    public Api() {
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BaseUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
-    }
-    public void login(LoginModel model){
 
+    public void login(LoginModel model){
 
         postService = retrofit.create(PostService.class);
 
         Call<String> call = postService.login(model);
-        // JsonObject x = new JsonObject();
         listener.onPreExecute();
         call.enqueue(new Callback<String>() {
             @Override

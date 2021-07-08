@@ -1,10 +1,12 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">techtile</string>
     <string name="title_activity_details">MainActivity</string>
     <string name="title_explore">Explore</string>
     <string name="title_home">For You</string>
     <string name="title_dashboard">Wallet</string>
     <string name="title_notifications">Profile</string>
+    <string name="username_textview">Username</string>
+    <string name="username_placeholder">Enter your username</string>
     <string name="email_textview">Email Address</string>
     <string name="email_placeholder">mail@mail.com</string>
     <string name="password_textview">Password</string>
@@ -16,11 +18,15 @@
     <string name="gmail_register_button">Continue with Gmail</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_up_to_log_in">Log in.</string>
+    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="log_in_to_sign_up">Sign Up!</string>
     <string name="facebookToast">This button is not implemented yet! For Facebook</string>
     <string name="gmailToast">This button is not implemented Yet! For Gmail</string>
-    <string name="emptyToast">Email and Password can not be empty!</string>
+    <string name="sign_up_emptyToast">Username, Email and Password can not be empty!</string>
+    <string name="login_emptyToast">Email and Password can not be empty!</string>
     <string name="create_account_toast">Account has been created succesfully! You can log in.</string>
     <string name="login_toast">Logged in succesfully!</string>
+    <string name="login_fail">Incorrect mail or password.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello Blank Fragment</string>
     <string name="events_you_might_like">Events you might like</string>

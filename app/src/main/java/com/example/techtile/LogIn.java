@@ -53,7 +53,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener, Ap
                 LogIn(email.getText().toString(), pw.getText().toString());
 
             } else {
-                Toast.makeText(this, getText(R.string.emptyToast), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getText(R.string.login_emptyToast), Toast.LENGTH_SHORT).show();
             }
         }
         if (v == createAccount){
@@ -77,7 +77,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener, Ap
             finish();
         }
         else{
-            Toast.makeText(this,"",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.login_fail,Toast.LENGTH_SHORT).show();
         }
     }
 }

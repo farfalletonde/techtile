@@ -12,14 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.techtile.Model.LoginModel;
 import com.example.techtile.Model.RegisterModel;
 import com.example.techtile.Utils.Api;
 
-import okhttp3.internal.ws.RealWebSocket;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener, Api.ApiResultListener {
-    private EditText email, pw;
+    private EditText username, email, pw;
     private Button signup, facebook, gmail;
     private TextView toLogin;
 
@@ -31,6 +29,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
     }
 
     private void initUI() {
+        username = findViewById(R.id.username_edittext);
         email = findViewById(R.id.mail_edittext);
         pw = findViewById(R.id.password_edittext);
         signup = findViewById(R.id.button);
@@ -44,23 +43,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
         this.getSupportActionBar().hide();
-     //   xx();
     }
 
 
-    private void signUp(String email, String password) {
+    private void signUp(String username, String email, String password) {
         Api api = new Api(this);
-        api.register(new RegisterModel(email,password,"hamza","hamzaybak"));
+        api.register(new RegisterModel(email,password,username,username));
     }
 
     @Override
     public void onClick(View v) {
         if (v == signup) {
-            if (!email.getText().toString().isEmpty() && !pw.getText().toString().isEmpty()) {
-                signUp(email.getText().toString(), pw.getText().toString());
-
-            } else {
-                Toast.makeText(this, getText(R.string.emptyToast), Toast.LENGTH_SHORT).show();
+            if (!username.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !pw.getText().toString().isEmpty()) {
+                signUp(username.getText().toString(), email.getText().toString(), pw.getText().toString());
+            }
+            else {
+                Toast.makeText(this, getText(R.string.sign_up_emptyToast), Toast.LENGTH_SHORT).show();
             }
         }
         if (v == toLogin) {

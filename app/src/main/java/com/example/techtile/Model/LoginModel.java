@@ -25,6 +25,4 @@ public class LoginModel {
         this.password = password;
     }
 
-    //asdassdas@asdasdas.com
-    //asdasds@dasdas.com
 }
