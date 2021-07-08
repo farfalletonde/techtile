@@ -44,15 +44,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
         this.getSupportActionBar().hide();
-        xx();
+     //   xx();
     }
-    private void xx(){
-        Api xxy = new Api(this);
-        xxy.login(new LoginModel("asdassdas@asdasdas.com","asdasds@dasdas.com"));
-    }
+
 
     private void signUp(String email, String password) {
-
+        Api api = new Api(this);
+        api.register(new RegisterModel(email,password,"hamza","hamzaybak"));
     }
 
     @Override
@@ -60,10 +58,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
         if (v == signup) {
             if (!email.getText().toString().isEmpty() && !pw.getText().toString().isEmpty()) {
                 signUp(email.getText().toString(), pw.getText().toString());
-                Intent intent = new Intent(this, LogIn.class);
-                Toast.makeText(this, R.string.create_account_toast, Toast.LENGTH_LONG).show();
-                startActivity(intent);
-                finish();
+
             } else {
                 Toast.makeText(this, getText(R.string.emptyToast), Toast.LENGTH_SHORT).show();
             }
@@ -74,9 +69,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
             finish();
         }
         if (v == facebook) {
-            Intent intent = new Intent(this, Details.class);
-            startActivity(intent);
-            finish();
             Toast.makeText(this, getString(R.string.facebookToast), Toast.LENGTH_SHORT).show();
         }
         if (v == gmail) {
@@ -91,6 +83,16 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
 
     @Override
     public void onPostExecute(String data, boolean isReqSuccess) {
-        Log.d("TAG", "onPostExecute: " + data + " " + isReqSuccess);
+        if(isReqSuccess){
+            Intent intent = new Intent(this, LogIn.class);
+            Toast.makeText(this, R.string.create_account_toast, Toast.LENGTH_LONG).show();
+            startActivity(intent);
+            finish();
+        }
+        else
+        {
+
+        }
+
     }
 }
