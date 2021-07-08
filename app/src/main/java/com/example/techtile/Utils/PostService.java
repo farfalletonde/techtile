@@ -1,13 +1,27 @@
 package com.example.techtile.Utils;
 
+import com.example.techtile.Model.LoginModel;
+import com.example.techtile.Model.RegisterModel;
+
+import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface PostService {
-    /*@Headers({
+    @Headers({
             "Content-type: application/json"
     })
-    @POST("30BA8604-1D75-222D-FFCB-50E506362500/66E6594E-CA57-43C0-A08C-8221F7ACBE9A/users/register")
-    Call<Pin> loginByPin(@Body Pin pin);*/
+    @POST("signup")
+    Call<RegisterModel> register(@Query("id") String id, @Body RegisterModel model);
+
+    @Headers({
+            "Content-type: application/json"
+    })
+    @PUT("login")
+    Call<LoginModel> login(@Path("id") String id, @Body LoginModel model);
 }

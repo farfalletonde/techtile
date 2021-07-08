@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -11,7 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignUp extends AppCompatActivity implements View.OnClickListener {
+import com.example.techtile.Model.LoginModel;
+import com.example.techtile.Model.RegisterModel;
+import com.example.techtile.Utils.Api;
+
+import okhttp3.internal.ws.RealWebSocket;
+
+public class SignUp extends AppCompatActivity implements View.OnClickListener, Api.ApiResultListener {
     private EditText email, pw;
     private Button signup, facebook, gmail;
     private TextView toLogin;
@@ -37,6 +44,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //show the activity in full screen
         this.getSupportActionBar().hide();
+        xx();
+    }
+    private void xx(){
+        Api xxy = new Api(this);
+        xxy.login(new LoginModel("asdassdas@asdasdas.com","asdasds@dasdas.com"));
     }
 
     private void signUp(String email, String password) {
@@ -70,5 +82,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         if (v == gmail) {
             Toast.makeText(this, getString(R.string.gmailToast), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onPreExecute() {
+        Log.d("TAG", "onPreExecute: ");
+    }
+
+    @Override
+    public void onPostExecute(String data, boolean isReqSuccess) {
+        Log.d("TAG", "onPostExecute: " + data + " " + isReqSuccess);
     }
 }

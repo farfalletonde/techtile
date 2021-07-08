@@ -2,7 +2,6 @@ package com.example.techtile.ui.for_you;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.techtile.Adapters.MyPagerAdapter;
+import com.example.techtile.Adapters.PageAdapter;
 import com.example.techtile.R;
 import com.example.techtile.databinding.FragmentForYouBinding;
 import com.google.android.material.tabs.TabLayout;
@@ -25,7 +24,7 @@ import java.util.ArrayList;
 
 public class ForYouFragment extends Fragment
         implements AdapterView.OnItemSelectedListener,
-        MyPagerAdapter.PagerClickListener {
+        PageAdapter.PagerClickListener {
 
     private View root;
     private ViewPager vp;
@@ -78,7 +77,7 @@ public class ForYouFragment extends Fragment
         arr.add(new View(getContext()));
         arr.add(new View(getContext()));
 
-        MyPagerAdapter adapter = new MyPagerAdapter(getContext(), arr, this);
+        PageAdapter adapter = new PageAdapter(getContext(), arr, this);
         vp.setAdapter(adapter);
         vp.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(layout));
     }
