@@ -1,4 +1,4 @@
-package com.example.techtile.ui.dashboard;
+package com.example.techtile.ui.wallet;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,27 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.techtile.R;
-import com.example.techtile.databinding.FragmentDashboardBinding;
+import com.example.techtile.databinding.FragmentWalletBinding;
 
-public class DashboardFragment extends Fragment {
+public class WalletFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-    private FragmentDashboardBinding binding;
+    private WalletViewModel walletViewModel;
+    private FragmentWalletBinding binding;
+
+    public static WalletFragment newInstance() {
+        return new WalletFragment();
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        walletViewModel =
+                new ViewModelProvider(this).get(WalletViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentWalletBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        walletViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

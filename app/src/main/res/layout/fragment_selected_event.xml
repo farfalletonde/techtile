@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_color"
+    android:layout_marginBottom="56dp"
+    tools:context=".ui.for_you.ForYouFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        tools:context=".SelectedEventFragment">
+
+        <TextView
+            android:id="@+id/vip_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circular_area"
+            android:paddingLeft="22dp"
+            android:paddingTop="12dp"
+            android:paddingRight="22dp"
+            android:paddingBottom="12dp"
+            android:text="@string/event_vip"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="1dp" />
+
+        <RelativeLayout
+            android:id="@+id/event_date_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circular_date_area"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="10dp"
+            android:elevation="1dp">
+
+            <TextView
+                android:id="@+id/event_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/event_day"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/event_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/event_month"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/event_image"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/event_img"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:layout_marginHorizontal="5dp"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@android:color/darker_gray"
+            app:tabBackground="@drawable/tab_item_background">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/overview_tab" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photos_tab" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guest_list_tab" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="410dp"
+            android:text="@string/event_name"
+            android:textColor="@color/black"
+            android:textSize="27sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/event_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginTop="410dp"
+            android:background="@drawable/rating_background"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:text="@string/event_rating"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@android:drawable/star_big_on" />
+
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="460dp"
+            android:text="@string/event_location"
+            android:textColor="#888888"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/outline_place_24" />
+
+        <TextView
+            android:id="@+id/event_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/event_desc"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="570dp"
+            android:text="@string/interested_checkbox"
+            android:textStyle="bold"
+            android:layoutDirection="rtl"
+            android:background="@drawable/circular_area"
+            android:backgroundTint="#EAEAFE"
+            android:paddingHorizontal="12dp"
+            android:textColorHighlight="@color/button_color">
+
+        </androidx.appcompat.widget.AppCompatCheckBox>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_check_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="630dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bordered_register_buttons"
+            android:paddingVertical="16dp"
+            android:text="@string/btn_check_in"
+            android:textAllCaps="false"
+            android:textColor="@color/button_color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_guaranteed_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="700dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/circular_area"
+            android:backgroundTint="@color/button_color"
+            android:paddingVertical="16dp"
+            android:text="@string/btn_guaranteed_entry"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+
+
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>
