@@ -6,7 +6,7 @@
     <string name="title_dashboard">Wallet</string>
     <string name="title_notifications">Profile</string>
     <string name="username_textview">Username</string>
-    <string name="username_placeholder">Enter your username</string>
+    <string name="username_placeholder">Username (min 5 characters)</string>
     <string name="email_textview">Email Address</string>
     <string name="email_placeholder">mail@mail.com</string>
     <string name="password_textview">Password</string>
