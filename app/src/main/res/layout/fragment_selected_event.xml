@@ -37,11 +37,11 @@
             android:id="@+id/event_date_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
+            android:layout_marginStart="280dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/circular_date_area"
-            android:paddingHorizontal="18dp"
-            android:paddingVertical="10dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
             android:elevation="1dp">
 
             <TextView
@@ -115,11 +115,11 @@
             android:id="@+id/event_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
+            android:layout_marginStart="270dp"
             android:layout_marginTop="410dp"
             android:background="@drawable/rating_background"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="7dp"
+            android:paddingHorizontal="9dp"
+            android:paddingVertical="6dp"
             android:text="@string/event_rating"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -153,14 +153,14 @@
         <androidx.appcompat.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="270dp"
+            android:layout_marginLeft="240dp"
             android:layout_marginTop="570dp"
             android:text="@string/interested_checkbox"
             android:textStyle="bold"
             android:layoutDirection="rtl"
             android:background="@drawable/circular_area"
             android:backgroundTint="#EAEAFE"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="10dp"
             android:textColorHighlight="@color/button_color">
 
         </androidx.appcompat.widget.AppCompatCheckBox>
